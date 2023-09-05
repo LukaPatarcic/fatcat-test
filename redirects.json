@@ -1,0 +1,10 @@
+[
+  {
+    "fromPath": "/services/full-product-development",
+    "toPath": "/software-development/application-development"
+  },
+  {
+    "fromPath": "/services/web-development",
+    "toPath": "/software-development/website-development"
+  }
+]

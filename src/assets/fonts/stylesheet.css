@@ -1,0 +1,65 @@
+/* Stolzl */
+@font-face {
+    font-family: 'Stolzl';
+    src: url('Stolzl/Stolzl-Thin.woff2') format('woff2'),
+    url('Stolzl/Stolzl-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Stolzl';
+    src: url('Stolzl/Stolzl-Light.woff2') format('woff2'),
+    url('Stolzl/Stolzl-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Stolzl';
+    src: url('Stolzl/Stolzl-Book.woff2') format('woff2'),
+    url('Stolzl/Stolzl-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Stolzl';
+    src: url('Stolzl/Stolzl-Regular.woff2') format('woff2'),
+    url('Stolzl/Stolzl-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Stolzl';
+    src: url('Stolzl/Stolzl-Medium.woff2') format('woff2'),
+    url('Stolzl/Stolzl-Medium.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Stolzl';
+    src: url('Stolzl/Stolzl-Bold.woff2') format('woff2'),
+    url('Stolzl/Stolzl-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Architects Daughter */
+@font-face {
+    font-family: 'Architects Daughter';
+    src: url('ArchitectsDaughter/ArchitectsDaughter-Regular.woff2') format('woff2'),
+    url('ArchitectsDaughter/ArchitectsDaughter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
