@@ -18,7 +18,7 @@ module.exports = {
         downloadLocal: true,
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        host: process.env.CONTENTFUL_HOST,
+        host: process.env.IS_PREVIEW === "true" ? "preview.contentful.com" : "cdn.contentful.com",
       },
     },
     "gatsby-plugin-sharp",
