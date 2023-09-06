@@ -74,17 +74,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
-        run: |
-          echo ${{ env.CONTENTFUL_SPACE_ID }}
-          echo ${{ secrets.CONTENTFUL_SPACE_ID }}
-          echo ${{ vars.CONTENTFUL_SPACE_ID }}
-          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
           CONTENTFUL_SPACE_ID: ${{ env.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ACCESS_TOKEN: ${{ env.CONTENTFUL_ACCESS_TOKEN }}
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build
+        run: |
+          echo ${{ env.CONTENTFUL_SPACE_ID }}
+          echo ${{ secrets.CONTENTFUL_SPACE_ID }}
+          echo ${{ vars.CONTENTFUL_SPACE_ID }}
+          ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
