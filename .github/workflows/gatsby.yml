@@ -74,7 +74,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run:
+          echo ${{ env.CONTENTFUL_SPACE_ID }}
+          echo ${{ secerts.CONTENTFUL_SPACE_ID }}
+          echo ${{ var.CONTENTFUL_SPACE_ID }}
+          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
