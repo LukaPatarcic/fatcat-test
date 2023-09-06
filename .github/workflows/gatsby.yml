@@ -74,7 +74,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
-        run:
+        run: |
           echo ${{ env.CONTENTFUL_SPACE_ID }}
           echo ${{ secerts.CONTENTFUL_SPACE_ID }}
           echo ${{ var.CONTENTFUL_SPACE_ID }}
