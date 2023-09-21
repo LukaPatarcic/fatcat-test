@@ -36,6 +36,9 @@
     "react-feather": "^2.0.9",
     "sharp": "^0.30.5"
   },
+  "optionalDependencies": {
+    "@parcel/watcher-linux-x64-glibc": "^2.3.0"
+  },
   "devDependencies": {
     "chalk": "4",
     "contentful-cli": "^1.15.3",

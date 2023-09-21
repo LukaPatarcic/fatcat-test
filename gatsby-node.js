@@ -1,5 +1,6 @@
 const { documentToHtmlString } = require("@contentful/rich-text-html-renderer")
 const { getGatsbyImageResolver } = require("gatsby-plugin-image/graphql-utils")
+const path = require("path")
 
 exports.createSchemaCustomization = async ({ actions }) => {
   actions.createFieldExtension({
@@ -612,8 +613,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
   `)
 }
 
-exports.createPages = ({ actions }) => {
-  const { createSlice } = actions
+exports.createPages = async ({ graphql, actions }) => {
+  const { createSlice, createPage } = actions
   createSlice({
     id: "header",
     component: require.resolve("./src/components/header.js"),
@@ -622,5 +623,28 @@ exports.createPages = ({ actions }) => {
     id: "footer",
     component: require.resolve("./src/components/footer.js"),
   })
+
+  const blogTemplate = path.resolve('./src/templates/blog.js')
+  const res = await graphql(`
+    query {
+      allContentfulBlog {
+        edges {
+          node {
+            slug,
+          }
+        }
+      }
+    }
+  `)
+  console.log(res)
+  res.data.allContentfulBlog.edges.forEach((edge) => {
+    createPage({
+      component: blogTemplate,
+      path: `/blog/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+      },
+      defer: true
+    })
+  })
 }
-      
